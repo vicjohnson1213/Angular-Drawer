@@ -1,1 +1,125 @@
+ion-content { --keyboard-offset: 0px !important; }
+.drawer {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
 
+	.top {
+		flex: 10;
+		overflow: hidden;
+		transition: flex 0.3s ease-out;
+		height: auto;
+
+		.top-content {
+			position: absolute;
+			left: 0;
+			top: 0;
+			right: 0;
+			height: 100%;
+			background-color: tomato;
+		}
+	}
+
+	.bottom {
+		background-color: white;
+		border-top-left-radius: 4px;
+		border-top-right-radius: 4px;
+		position: relative;
+
+		flex: 0;
+		transition: flex 0.3s ease-out;
+		height: auto;
+		z-index: 1;
+	}
+
+	&.medium {
+		.top {
+			flex: 6;
+		}
+
+		.bottom {
+			overflow: hidden;
+			flex: 4;
+		}
+	}
+
+	&.large {
+		.top {
+			flex: 1;
+		}
+
+		.bottom {
+			overflow: scroll;
+			-webkit-overflow-scrolling: touch;
+			flex: 9;
+		}
+	}
+
+	.button {
+		background-color: #006aff;
+		color: white;
+		font-weight: bold;
+		border-radius: 1000px;
+		height: 32px;
+		width: 100%;
+		padding: 0 10px;
+		border: none;
+		margin-bottom: 8px;
+	}
+
+	.content-container {
+		padding: 8px;
+	}
+
+	.close {
+		position: absolute;
+		right: 24px;
+		top: 24px;
+	}
+
+	.content {
+		background-color: #ddd;
+		padding: 8px;
+
+		& + .content {
+			margin-top: 8px;
+		}
+	}
+
+	.padding {
+		padding: 16px;
+
+		h2 {
+			margin-top: 8px;
+			margin-bottom: 8px;
+		}
+	}
+
+	.search-bar {
+		background-color: white;
+		padding: 8px;
+		position: sticky;
+		top: 0px;
+		width: 100%;
+		box-sizing: border-box;
+		display: flex;
+		align-items: center;
+
+		i {
+			margin-right: 8px;
+		}
+
+		input[type="text"] {
+			width: 100%;
+			box-sizing: border-box;
+			padding: 8px;
+			border-radius: 4px;
+			border: 1px solid #ddd;
+			font-size: 16px;
+
+			&:focus {
+				outline: none;
+			}
+		}
+	}
+}

@@ -1,12 +1,27 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content>
+    <div class="drawer" [class.large]="mode === 'large'">
+        <div class="top" (click)="toSmall()">
+            <div class="top-content"></div>
+        </div>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs">docs</a> will be your guide.</p>
+        <div class="bottom">
+            <div class="search-bar" *ngIf="!selectedStore.length">
+                <input type="text" placeholder="Search for stores" (click)="toLarge($event)" #search>
+            </div>
+
+            <ng-container *ngIf="selectedStore.length">
+                <i class="material-icons close" (click)="toLarge()">close</i>
+                <div class="padding">
+                    <h2>{{ selectedStore[0] }} #{{ selectedStore[1] + 1 }}</h2>
+                    <p>256 W. Data Drive</p>
+                    <p>2.6 miles</p>
+                    <button class="button">Apply now</button>
+                </div>
+            </ng-container>
+
+            <div class="content-container" *ngIf="mode === 'large'">
+                <div class="content" (click)="toSmall(store, i)" *ngFor="let store of stores; let i = index">{{ store }} #{{ i + 1 }}</div>
+            </div>
+        </div>
+    </div>
 </ion-content>

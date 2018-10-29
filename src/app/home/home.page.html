@@ -1,4 +1,4 @@
-<ion-content>
+<ion-content padding scroll-y='false'>
     <div class="drawer" [class.large]="mode === 'large'">
         <div class="top" (click)="toSmall()">
             <div class="top-content"></div>
@@ -6,7 +6,8 @@
 
         <div class="bottom">
             <div class="search-bar" *ngIf="!selectedStore.length">
-                <input type="text" placeholder="Search for stores" (click)="toLarge($event)" #search>
+                <input type="text" placeholder="Search for stores" (click)="toLarge()" #search>
+                <button class="button" (click)="searchForStores()">Search for stores</button>
             </div>
 
             <ng-container *ngIf="selectedStore.length">

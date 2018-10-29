@@ -45,13 +45,14 @@ export class HomePage {
         }
 
         this.mode = 'small';
-        this.readOnly = true;
     }
 
-    toLarge(event) {
+    toLarge() {
         this.mode = 'large';
         this.selectedStore = [];
-        event.stopPropagation();
-        event.preventDefault();
+    }
+
+    searchForStores() {
+        this.search.nativeElement.
     }
 }

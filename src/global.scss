@@ -12,3 +12,17 @@
 
 body {
 }
+
+ion-content {
+    // position: fixed;
+    // --keyboard-offset: 0px !important;
+    // overflow: hidden;
+}
+
+ion-content.content-md[padding] .scroll-content {
+	padding-bottom: 16px !important;
+}
+
+ion-content.content-md:not([padding]) .scroll-content {
+	padding-bottom: 0 !important;
+}

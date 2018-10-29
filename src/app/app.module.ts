@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
+import { IonicConfig } from '@ionic/core';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
@@ -15,8 +16,9 @@ import { AppRoutingModule } from './app-routing.module';
   imports: [
       BrowserModule,
       IonicModule.forRoot({
-          scrollPadding: false,
-          scrollAssist: false
+            scrollPadding: 'false',
+            scrollAssist: false,
+            keyboardHeight: 0
       }),
       AppRoutingModule
   ],
